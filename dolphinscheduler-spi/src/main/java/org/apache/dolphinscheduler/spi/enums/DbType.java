@@ -55,7 +55,10 @@ public enum DbType {
     ZEPPELIN(24, "zeppelin", "zeppelin"),
     SAGEMAKER(25, "sagemaker", "sagemaker"),
 
-    K8S(26, "k8s", "k8s");
+    K8S(26, "k8s", "k8s"),
+
+    ALIYUN_ADB_SPARK(27, "aliyun_adb_spark", "aliyun adb spark");
+
     private static final Map<Integer, DbType> DB_TYPE_MAP =
             Arrays.stream(DbType.values()).collect(toMap(DbType::getCode, Functions.identity()));
     @EnumValue
