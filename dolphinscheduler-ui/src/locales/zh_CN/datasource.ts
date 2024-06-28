@@ -94,5 +94,11 @@ export default {
   kubeConfig: 'kubeConfig',
   kubeConfig_tips: '请输入KubeConfig',
   namespace: 'namespace',
-  namespace_tips: '请输入namespace'
+  namespace_tips: '请输入namespace',
+  aliyun_access_key_id: '阿里云Access Key ID',
+  aliyun_access_key_id_tips: '请输入阿里云Access Key ID',
+  aliyun_access_key_secret: '阿里云Access Key Secret',
+  aliyun_access_key_secret_tips: '请输入阿里云Access Key Secret',
+  aliyun_region_id: '阿里云Region ID',
+  aliyun_region_id_tips: '请输入阿里云 Region ID'
 }

@@ -42,6 +42,7 @@ type IDataBase =
   | 'ZEPPELIN'
   | 'SAGEMAKER'
   | 'K8S'
+  | 'ALIYUN_ADB_SPARK'
 
 type IDataBaseLabel =
   | 'MYSQL'
@@ -65,6 +66,7 @@ type IDataBaseLabel =
   | 'ZEPPELIN'
   | 'SAGEMAKER'
   | 'K8S'
+  | 'ALIYUN_ADB_SPARK'
 
 interface IDataSource {
   id?: number
@@ -94,6 +96,9 @@ interface IDataSource {
   compatibleMode?: string
   publicKey?: string
   datawarehouse?: string
+  aliyunAccessKeyId?: string
+  aliyunAccessKeySecret?: string
+  aliyunRegionId?: string
 }
 
 interface ListReq {
