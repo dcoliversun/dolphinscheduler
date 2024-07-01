@@ -157,6 +157,11 @@ export function useDatasource(
       id: 25,
       code: 'SAGEMAKER',
       disabled: false
+    },
+    {
+      id: 26,
+      code: 'ALIYUN_ADB_SPARK',
+      disabled: false
     }
   ]
 

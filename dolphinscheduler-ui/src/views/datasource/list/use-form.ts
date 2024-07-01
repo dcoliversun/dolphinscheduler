@@ -71,6 +71,9 @@ export function useForm(id?: number) {
     showPublicKey: false,
     showNamespace: false,
     showKubeConfig: false,
+    showAliyunAccessKeyId: false,
+    showAliyunAccessKeySecret: false,
+    showAliyunRegionId: false,
     rules: {
       name: {
         trigger: ['input'],
@@ -121,7 +124,8 @@ export function useForm(id?: number) {
           if (
             !state.detailForm.userName &&
             state.detailForm.type !== 'AZURESQL' &&
-            state.detailForm.type !== 'K8S'
+            state.detailForm.type !== 'K8S' &&
+            state.detailForm.type !== 'ALIYUN_ADB_SPARK'
           ) {
             return new Error(t('datasource.user_name_tips'))
           }
@@ -268,7 +272,8 @@ export function useForm(id?: number) {
       type === 'SSH' ||
       type === 'ZEPPELIN' ||
       type === 'SAGEMAKER' ||
-      type === 'K8S'
+      type === 'K8S' ||
+      type === 'ALIYUN_ADB_SPARK'
     ) {
       state.showDataBaseName = false
       state.requiredDataBase = false
@@ -282,13 +287,18 @@ export function useForm(id?: number) {
         state.showPort = false
         state.showRestEndpoint = true
       }
-      if (type === 'SAGEMAKER' || type === 'K8S') {
+      if (type === 'SAGEMAKER' || type === 'K8S' || type === 'ALIYUN_ADB_SPARK') {
         state.showHost = false
         state.showPort = false
       }
       if (type === 'K8S') {
         state.showNamespace = true
         state.showKubeConfig = true
+      }
+      if (type === 'ALIYUN_ADB_SPARK') {
+        state.showAliyunAccessKeyId = true
+        state.showAliyunAccessKeySecret = true
+        state.showAliyunRegionId = true
       }
     } else {
       state.showDataBaseName = true
@@ -458,6 +468,11 @@ export const datasourceType: IDataBaseOptionKeys = {
     value: 'K8S',
     label: 'K8S',
     defaultPort: 6443
+  },
+  ALIYUN_ADB_SPARK: {
+    value: 'ALIYUN_ADB_SPARK',
+    label: 'ALIYUN_ADB_SPARK',
+    defaultPort: 0
   }
 }
 

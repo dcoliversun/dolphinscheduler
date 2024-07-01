@@ -53,6 +53,7 @@ import { useLinkis } from './use-linkis'
 import { useDataFactory } from './use-data-factory'
 import { useRemoteShell } from './use-remote-shell'
 import { useDynamic } from './use-dynamic'
+import { useAliyunAdbSpark } from './use-aliyun-adb-spark'
 
 export default {
   SHELL: useShell,
@@ -92,5 +93,6 @@ export default {
   KUBEFLOW: useKubeflow,
   LINKIS: useLinkis,
   DATA_FACTORY: useDataFactory,
-  REMOTESHELL: useRemoteShell
+  REMOTESHELL: useRemoteShell,
+  ALIYUN_ADB_SPARK: useAliyunAdbSpark
 }

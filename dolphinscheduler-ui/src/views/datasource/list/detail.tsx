@@ -155,6 +155,9 @@ const DetailModal = defineComponent({
       showHost,
       showPort,
       showRestEndpoint,
+      showAliyunAccessKeyId,
+      showAliyunAccessKeySecret,
+      showAliyunRegionId,
       showAwsRegion,
       showCompatibleMode,
       showConnectType,
@@ -268,6 +271,51 @@ const DetailModal = defineComponent({
                     type='text'
                     maxlength={255}
                     placeholder={t('datasource.zeppelin_rest_endpoint_tips')}
+                  />
+                </NFormItem>
+                <NFormItem
+                  v-show={showAliyunAccessKeyId}
+                  label={t('datasource.aliyun_access_key_id')}
+                  path='aliyunAccessKeyId'
+                  show-require-mark
+                >
+                  <NInput
+                    allowInput={this.trim}
+                    class={'input-aliyun_access_key_id'}
+                    v-model={[detailForm.aliyunAccessKeyId, 'value']}
+                    type='text'
+                    maxlength={255}
+                    placeholder={t('datasource.aliyun_access_key_id_tips')}
+                  />
+                </NFormItem>
+                <NFormItem
+                  v-show={showAliyunAccessKeySecret}
+                  label={t('datasource.aliyun_access_key_secret')}
+                  path='aliyunAccessKey'
+                  show-require-mark
+                >
+                  <NInput
+                    allowInput={this.trim}
+                    class={'input-aliyun_access_key_secret'}
+                    v-model={[detailForm.aliyunAccessKeySecret, 'value']}
+                    type='text'
+                    maxlength={255}
+                    placeholder={t('datasource.aliyun_access_key_secret_tips')}
+                  />
+                </NFormItem>
+                <NFormItem
+                    v-show={showAliyunRegionId}
+                    label={t('datasource.aliyun_region_id')}
+                    path='aliyunRegionId'
+                    show-require-mark
+                >
+                  <NInput
+                      allowInput={this.trim}
+                      class={'input-aliyun_region_id'}
+                      v-model={[detailForm.aliyunRegionId, 'value']}
+                      type='text'
+                      maxlength={255}
+                      placeholder={t('datasource.aliyun_region_id_tips')}
                   />
                 </NFormItem>
                 <NFormItem
@@ -546,7 +594,7 @@ const DetailModal = defineComponent({
                 <NFormItem
                   v-show={
                     (!showMode || detailForm.mode === 'password') &&
-                    detailForm.type != 'K8S'
+                    detailForm.type != 'K8S' && detailForm.type != 'ALIYUN_ADB_SPARK'
                   }
                   label={t('datasource.user_name')}
                   path='userName'
@@ -564,7 +612,7 @@ const DetailModal = defineComponent({
                 <NFormItem
                   v-show={
                     (!showMode || detailForm.mode === 'password') &&
-                    detailForm.type != 'K8S'
+                    detailForm.type != 'K8S' && detailForm.type != 'ALIYUN_ADB_SPARK'
                   }
                   label={t('datasource.user_password')}
                   path='password'
