@@ -59,7 +59,7 @@ type TaskType =
   | 'LINKIS'
   | 'DATA_FACTORY'
   | 'REMOTESHELL'
-  | 'ALIYUN_ADB_SPARK'
+  | 'ADBSPARK'
 
 type ProgramType = 'JAVA' | 'SCALA' | 'PYTHON'
 

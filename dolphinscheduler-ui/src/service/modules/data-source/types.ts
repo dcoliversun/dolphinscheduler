@@ -42,7 +42,7 @@ type IDataBase =
   | 'ZEPPELIN'
   | 'SAGEMAKER'
   | 'K8S'
-  | 'ALIYUN_ADB_SPARK'
+  | 'ADBSPARK'
 
 type IDataBaseLabel =
   | 'MYSQL'
@@ -66,7 +66,7 @@ type IDataBaseLabel =
   | 'ZEPPELIN'
   | 'SAGEMAKER'
   | 'K8S'
-  | 'ALIYUN_ADB_SPARK'
+  | 'ADBSPARK'
 
 interface IDataSource {
   id?: number

@@ -53,7 +53,7 @@ export type TaskType =
   | 'LINKIS'
   | 'DATA_FACTORY'
   | 'REMOTESHELL'
-  | 'ALIYUN_ADB_SPARK'
+  | 'ADBSPARK'
 
 export type TaskExecuteType = 'STREAM' | 'BATCH'
 
@@ -196,8 +196,8 @@ export const TASK_TYPES_MAP = {
     alias: 'REMOTESHELL',
     helperLinkDisable: true
   },
-  ALIYUN_ADB_SPARK: {
-    alias: 'ALIYUN_ADB_SPARK',
+  ADBSPARK: {
+    alias: 'ADBSPARK',
     helperLinkDisable: true
   }
 } as {

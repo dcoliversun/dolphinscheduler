@@ -274,7 +274,7 @@ const DetailModal = defineComponent({
                   />
                 </NFormItem>
                 <NFormItem
-                  v-show={showAliyunAccessKeyId}
+                  v-show={showAliyunAccessKeyId && detailForm.type === 'ADBSPARK'}
                   label={t('datasource.aliyun_access_key_id')}
                   path='aliyunAccessKeyId'
                   show-require-mark
@@ -289,7 +289,7 @@ const DetailModal = defineComponent({
                   />
                 </NFormItem>
                 <NFormItem
-                  v-show={showAliyunAccessKeySecret}
+                  v-show={showAliyunAccessKeySecret && detailForm.type === 'ADBSPARK'}
                   label={t('datasource.aliyun_access_key_secret')}
                   path='aliyunAccessKey'
                   show-require-mark
@@ -304,7 +304,7 @@ const DetailModal = defineComponent({
                   />
                 </NFormItem>
                 <NFormItem
-                    v-show={showAliyunRegionId}
+                    v-show={showAliyunRegionId && detailForm.type === 'ADBSPARK'}
                     label={t('datasource.aliyun_region_id')}
                     path='aliyunRegionId'
                     show-require-mark
@@ -594,7 +594,7 @@ const DetailModal = defineComponent({
                 <NFormItem
                   v-show={
                     (!showMode || detailForm.mode === 'password') &&
-                    detailForm.type != 'K8S' && detailForm.type != 'ALIYUN_ADB_SPARK'
+                    detailForm.type != 'K8S' && detailForm.type != 'ADBSPARK'
                   }
                   label={t('datasource.user_name')}
                   path='userName'
@@ -612,7 +612,7 @@ const DetailModal = defineComponent({
                 <NFormItem
                   v-show={
                     (!showMode || detailForm.mode === 'password') &&
-                    detailForm.type != 'K8S' && detailForm.type != 'ALIYUN_ADB_SPARK'
+                    detailForm.type != 'K8S' && detailForm.type != 'ADBSPARK'
                   }
                   label={t('datasource.user_password')}
                   path='password'
